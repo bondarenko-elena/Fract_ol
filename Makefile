@@ -5,6 +5,7 @@ SRC := main.c \
 		set_julia.c \
 		set_mandelbrot.c \
 		handle_key.c \
+		show_text.c \
 
 SRC:= $(addprefix src/,$(SRC))
 OBJ := $(SRC:.c=.o)

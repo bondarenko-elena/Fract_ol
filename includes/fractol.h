@@ -5,12 +5,15 @@
 # include <mlx.h>
 # include <math.h>
 # include "../libft/libft.h"
+# include <stdio.h>
 
 # define WIDTH 900
 # define HEIGHT 900
 
 typedef struct		s_map
 {
+	double			iter_x;
+	double			iter_y;
 	void			*mlx_init;
 	void			*window;
 	void			*image;
@@ -24,9 +27,16 @@ typedef struct		s_map
 	double			oldRe;
 	double			oldIm;
 	//you can change these to zoom and change position
-	double			zoom; // = 1;
+	double			zoom; // = 300;
 	double			moveX; // = 0;
 	double			moveY; // = 0;
+	double			x1;
+	double			x2;
+	double			y1;
+	double			y2;
+	double			img_x;
+	double			img_y;
+	char			*data;
 	int				color_red;
 	int				color_green;
 	int				color_blue;
@@ -43,5 +53,6 @@ void				set_mandelbrot(t_map *map);
 void				set_julia(t_map *map);
 void				mlx(t_map *map);
 int					handle_key(int key_code, t_map *map);
+void				show_text(t_map *map);
 
 #endif

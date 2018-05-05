@@ -1,5 +1,4 @@
 #include "fractol.h"
-#include <stdio.h>
 
 void set_julia(t_map *map)
 {
