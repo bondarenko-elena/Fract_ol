@@ -12,47 +12,35 @@
 
 typedef struct		s_map
 {
-	double			iter_x;
-	double			iter_y;
-	void			*mlx_init;
-	void			*window;
-	void			*image;
-	int				fractal;
-	//real and imaginary part of the constant c, determinate shape of the Julia Set
-	double			cRe;
-	double			cIm;
-	//real and imaginary parts of new and old
-	double			newRe;
-	double			newIm;
-	double			oldRe;
-	double			oldIm;
-	//you can change these to zoom and change position
-	double			zoom; // = 300;
-	double			moveX; // = 0;
-	double			moveY; // = 0;
-	double			x1;
-	double			x2;
-	double			y1;
-	double			y2;
-	double			img_x;
-	double			img_y;
+	double			x;
+	double			y;
 	char			*data;
 	int				color_red;
 	int				color_green;
 	int				color_blue;
 	int				max_iteration;
-	//mlx_get_data_adr
+	void			*mlx_init;
+	//for mlx_get_data_adr
 	char			*get_data_addr;
 	int				bits_per_pixel;
 	int				size_line;
 	int				endian;
-	unsigned long	color;
+	//
+	double			x1;
+	double			y1;
+	double			x2;
+	double			y2;
+	double			img_x;
+	double			img_y;
+	
 }					t_map;
 
-void				set_mandelbrot(t_map *map);
 void				set_julia(t_map *map);
+void				set_mandelbrot(t_map *map);
 void				mlx(t_map *map);
-int					handle_key(int key_code, t_map *map);
-void				show_text(t_map *map);
+void				display_text(t_map *map);
+void				init_map(t_map *map);
+void				draw(t_map *map);
+void				event(t_map *map);
 
 #endif

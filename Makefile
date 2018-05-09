@@ -4,8 +4,10 @@ SRC := main.c \
 		mlx.c \
 		set_julia.c \
 		set_mandelbrot.c \
-		handle_key.c \
-		show_text.c \
+		display_text.c \
+		init_map.c \
+		draw.c \
+		event.c \
 
 SRC:= $(addprefix src/,$(SRC))
 OBJ := $(SRC:.c=.o)
