@@ -32,6 +32,13 @@ typedef struct		s_map
 	double			y2;
 	double			img_x;
 	double			img_y;
+	double			jul_x;
+	double			jul_y;
+	double			curr_iteration;
+	double			cre;
+	double			cim;
+	double			newz;
+	double			oldz;
 	
 }					t_map;
 
