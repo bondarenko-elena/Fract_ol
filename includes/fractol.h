@@ -37,8 +37,8 @@ typedef struct		s_map
 	double			curr_iteration;
 	double			cre;
 	double			cim;
-	double			newz;
-	double			oldz;
+	double			zx;
+	double			zy;
 	
 }					t_map;
 
