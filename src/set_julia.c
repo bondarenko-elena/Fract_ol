@@ -2,7 +2,8 @@
 
 /*
 ** cre, cim - real and imaginary part of the constant c, determines shape of the set.
-** newz, oldz - new and old positions for Z, Z is initially the coordinates of the pixel, and will then constantly be updated through every iteration.
+** zx = scaled x coordinate of pixel (scaled to lie in the Mandelbrot X scale (-2.5, 1)); zx represents the real part of z
+** zy = scaled y coordinate of pixel (scaled to lie in the Mandelbrot Y scale (-1, 1)); zy represents the imaginary part of z 
 */
 
 void set_julia(t_map *map)
@@ -11,14 +12,14 @@ void set_julia(t_map *map)
 
 	map->cre = map->jul_x;
 	map->cim = map->jul_y;
-	map->newz = map->x / map->zoom + map->x1;
-	map->oldz = map->y / map->zoom + map->y1;
+	map->zx = map->x / map->zoom + map->x1;
+	map->zy = map->y / map->zoom + map->y1;
 	map->curr_iteration = 0;
-	while (map->newz * map->newz + mыap->oldz * map->oldz < 4 && map->curr_iteration < map->max_iteration)
+	while (map->zx * map->zx + map->zy * map->zy < 4 && map->curr_iteration < map->max_iteration)
 	{
-		tmp = map->newz;
-		map->newz = map->newz * map->newz - map->oldz * map->oldz + map->cre;
-		map->oldz = 2 * map->oldz * tmp + map->cim;
+		tmp = map->zx;
+		map->zx = map->zx * map->zx - map->zy * map->zy + map->cre;
+		map->xy = 2 * map->zy * tmp + map->cim;
 		map->curr_iteration++;
 	}
 	if (map->curr_iteration == map->max_iteration)

@@ -3,24 +3,25 @@
 
 /*
 ** cre, cim - real and imaginary part of the constant c, determines shape of the set
-** newz, oldz - you can change these to zoom and change position
+** zx = scaled x coordinate of pixel (scaled to lie in the Mandelbrot X scale (-2.5, 1)); zx represents the real part of z
+** zy = scaled y coordinate of pixel (scaled to lie in the Mandelbrot Y scale (-1, 1)); zy represents the imaginary part of z 
 */
 
 void set_mandelbrot(t_map *map)
 {
 	float			tmp;
 
-	map->newz = 0;
-	map->oldz = 0;
+	map->zx = 0;
+	map->zy = 0;
 	map->curr_iteration = 0;
 	map->cre = map->x / map->zoom + map->x1;
 	map->cim = map->y / map->zoom + map->y1;
 
-	while (map->newz * map->newz + map->oldz * map->oldz < 4 && map->curr_iteration < map->max_iteration)
+	while (map->zx * map->zx + map->zy * map->zy < 4 && map->curr_iteration < map->max_iteration)
 	{
-		tmp = map->newz;
-		map->newz = map->newz * map->newz - map->oldz * map->oldz + map->cre;
-		map->oldz = 2 * map->oldz * tmp + map->cim;
+		tmp = map->zx;
+		map->zx = map->zx * map->zx - map->zy * map->zy + map->cre;
+		map->zy = 2 * map->zy * tmp + map->cim;
 		map->curr_iteration++;
 	}
 	if (map->curr_iteration == map->max_iteration)
