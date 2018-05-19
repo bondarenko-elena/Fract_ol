@@ -12,7 +12,7 @@ void	init_map(t_map *map)
 	map->color_green = 170;
 	map->color_blue = 255;
 	map->image = mlx_new_image(map->mlx_init, WIDTH, HEIGHT);
-	map->data = mlx_get_data_addr(map->image, map->bits_per_pixel, map->size_line, map->endian);
+	map->data = mlx_get_data_addr(map->image, &(map->bits_per_pixel), &(map->size_line), &(map->endian));
 	
 	map->x1 = -2.05;
 	map->y1 = -1.3;

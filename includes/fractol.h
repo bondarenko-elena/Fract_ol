@@ -12,6 +12,11 @@
 
 typedef struct		s_map
 {
+	double			zoom;
+	double			xy;
+	void			*window;
+	void			*image;
+	int				fractal;
 	double			x;
 	double			y;
 	char			*data;

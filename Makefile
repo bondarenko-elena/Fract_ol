@@ -4,7 +4,7 @@ SRC := main.c \
 		mlx.c \
 		set_julia.c \
 		set_mandelbrot.c \
-		display_text.c \
+		show_text.c \
 		init_map.c \
 		draw.c \
 		event.c \
