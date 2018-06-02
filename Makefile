@@ -13,6 +13,8 @@ SRC := main.c \
 		switch_color.c \
 		switch_fractal.c \
 		mouse_julia.c \
+		put_pixel.c \
+		put_pixel_2.c \
 
 SRC:= $(addprefix src/,$(SRC))
 OBJ := $(SRC:.c=.o)

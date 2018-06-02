@@ -20,6 +20,7 @@ typedef struct		s_map
 	double			x;
 	double			y;
 	char			*data;
+	unsigned long	color;
 	int				color_red;
 	int				color_green;
 	int				color_blue;
@@ -60,5 +61,8 @@ int					handle_key(t_map *map, int key_code);
 int					switch_color(t_map *map, int keycode);
 int					switch_fractal(t_map *map, int keycode);
 int					mouse_julia(t_map *map, int x, int y);
+void				put_pixel(t_map *map, int x, int y);
+void				put_pixel(t_map *map, int x, int y);
+void				put_pixel_2(t_map *map, int x, int y);
 
 #endif
