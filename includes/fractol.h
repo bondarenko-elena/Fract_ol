@@ -44,6 +44,7 @@ typedef struct		s_map
 	double			cim;
 	double			zx;
 	double			zy;
+	int				mouse_switch;
 	
 }					t_map;
 
@@ -54,5 +55,10 @@ void				display_text(t_map *map);
 void				init_map(t_map *map);
 void				draw(t_map *map);
 void				event(t_map *map);
+int					mouse_move(t_map *map, int keycode, int x, int y);
+int					handle_key(t_map *map, int key_code);
+int					switch_color(t_map *map, int keycode);
+int					switch_fractal(t_map *map, int keycode);
+int					mouse_julia(t_map *map, int x, int y);
 
 #endif

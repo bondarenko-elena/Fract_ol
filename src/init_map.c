@@ -4,6 +4,7 @@ void	init_map(t_map *map)
 {
 	map->mlx_init = mlx_init();
 	map->window = mlx_new_window(map->mlx_init, WIDTH, HEIGHT, "olbondar");
+	map->mouse_switch = 1;
 	map->x = 0;
 	map->y = 0;
 	map->zoom = 300;

@@ -4,10 +4,15 @@ SRC := main.c \
 		mlx.c \
 		set_julia.c \
 		set_mandelbrot.c \
-		show_text.c \
+		display_text.c \
 		init_map.c \
 		draw.c \
 		event.c \
+		mouse_move.c \
+		handle_key.c \
+		switch_color.c \
+		switch_fractal.c \
+		mouse_julia.c \
 
 SRC:= $(addprefix src/,$(SRC))
 OBJ := $(SRC:.c=.o)
