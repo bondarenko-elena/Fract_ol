@@ -24,8 +24,8 @@ void set_julia(t_map *map)
 	}
 	if (map->curr_iteration == map->max_iteration)
 		//put_pxl_to_image(map, map->x, map->y);
-		puts("do put_pxl_to_image");
+		puts("do put_pixel");
 	else
 		//put_pxl_to_image2(map, map->x, map->y);
-		puts("do put_pxl_to_image");
+		puts("do put_pixel_2");
 }
