@@ -10,5 +10,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_putendl("wrong argument");
+
+	while (1);
 	return (0);
 }
