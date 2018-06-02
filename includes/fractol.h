@@ -7,8 +7,8 @@
 # include "../libft/libft.h"
 # include <stdio.h>
 
-# define WIDTH 900
-# define HEIGHT 900
+# define WIDTH 1000
+# define HEIGHT 1000
 
 typedef struct		s_map
 {

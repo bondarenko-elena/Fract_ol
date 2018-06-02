@@ -2,6 +2,7 @@
 
 void	draw(t_map *map)
 {
+	puts("piu");
 	ft_bzero(map->data, map->size_line * 1000);
 	map->img_x = (map->x2 - map->x1) * map->zoom;
 	map->img_y = (map->y2 - map->y1) * map->zoom;
