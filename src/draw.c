@@ -2,7 +2,6 @@
 
 void	draw(t_map *map)
 {
-	puts("piu");
 	ft_bzero(map->data, map->size_line * 1000);
 	map->img_x = (map->x2 - map->x1) * map->zoom;
 	map->img_y = (map->y2 - map->y1) * map->zoom;
@@ -25,9 +24,9 @@ void	draw(t_map *map)
 			break ;
 	}
 	
+
 	
-
-
 	mlx_put_image_to_window(map->mlx_init, map->window, map->image, 0, 0);
 	display_text(map);
+
 }
