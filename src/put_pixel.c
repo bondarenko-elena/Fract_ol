@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   put_pixel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/07 19:05:44 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/07 19:05:59 by olbondar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
-void			put_pixel(t_map *map, int x, int y)
+void	put_pixel(t_map *map, int x, int y)
 {
 	unsigned char	red;
 	unsigned char	green;

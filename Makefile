@@ -12,7 +12,7 @@ SRC := main.c \
 		mouse_hook.c \
 		mouse_julia.c \
 		switch_color.c \
-		swich_fractal.c \
+		switch_fractal.c \
 		handle_key.c \
 		put_pixel.c \
 		put_pixel_2.c \

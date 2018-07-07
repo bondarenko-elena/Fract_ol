@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mouse_hook.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/07 18:58:41 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/07 19:04:37 by olbondar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
-int				mouse_hook(int button, int x, int y, t_map *map)
+int	mouse_hook(int button, int x, int y, t_map *map)
 {
-	// printf("keycode == %d\n", button);
 	if (button == 5 || button == 1)
 	{
 		map->x2 = x;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_draw.c                                          :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olbondar <olbondar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/20 10:50:10 by thgiraud          #+#    #+#             */
-/*   Updated: 2018/07/07 16:09:45 by olbondar         ###   ########.fr       */
+/*   Created: 2018/07/07 18:53:06 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/07 18:57:51 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void				draw(t_map *map)
+void	draw(t_map *map)
 {
 	ft_bzero(map->get_data_addr, map->size_line * 1000);
 	map->img_x = (map->x2 - map->x1) * map->zoom;

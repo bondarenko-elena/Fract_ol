@@ -1,15 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_douady.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/07 19:09:22 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/07 19:09:58 by olbondar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
-void				set_douady(t_map *map)
+void	set_douady(t_map *map)
 {
-	double			tmp;
+	double	tmp;
 
 	map->z_r = map->x / map->zoom + map->x1;
 	map->z_i = map->y / map->zoom + map->y1;
 	map->c_r = -0.12;
 	map->c_i = 0.75;
 	map->current_iteration = 0;
-	while (map->z_r * map->z_r + map->z_i * map->z_i < 4 && map->current_iteration < map->max_iteration)
+	while (map->z_r * map->z_r + map->z_i * map->z_i < 4
+			&& map->current_iteration < map->max_iteration)
 	{
 		tmp = map->z_r;
 		map->z_r = map->z_r * map->z_r - map->z_i * map->z_i + map->c_r;

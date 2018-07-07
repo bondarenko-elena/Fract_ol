@@ -71,7 +71,7 @@ void				display_text(t_map *map);
 int					mouse_hook(int button, int x, int y, t_map *map);
 int					mouse_julia(int x, int y, t_map *map);
 int					switch_color(int keycode, t_map *map);
-int					swich_fractal(int keycode, t_map *map);
+int					switch_fractal(int keycode, t_map *map);
 int					handle_key(int keycode, t_map *map);
 void				put_pixel(t_map *map, int x, int y);
 void				put_pixel_2(t_map *map, int x, int y);

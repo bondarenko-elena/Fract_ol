@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_julia.c                                      :+:      :+:    :+:   */
+/*   switch_fractal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 19:05:18 by olbondar          #+#    #+#             */
-/*   Updated: 2018/07/07 19:05:21 by olbondar         ###   ########.fr       */
+/*   Created: 2018/07/07 19:16:37 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/07 19:16:42 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int				mouse_julia(int x, int y, t_map *map)
+int	switch_fractal(int keycode, t_map *map)
 {
-	if (map->mouse_switch == 1)
+	if (keycode == 18 || keycode == 83)
 	{
-		map->juls_x = (double)x / (double)(map->zoom / 2) - 1;
-		map->juls_y = (double)y / (double)(map->zoom / 2) - 1;
+		map->fractal = 1;
+		map->zoom = 300;
+		map->max_iteration = 50;
 	}
+	if (keycode == 19 || keycode == 84)
+	{
+		map->fractal = 2;
+		map->zoom = 300;
+		map->max_iteration = 50;
+	}
+	if (keycode == 20 || keycode == 85)
+	{
+		map->fractal = 3;
+		map->zoom = 300;
+		map->max_iteration = 50;
+	}
+	mlx_clear_window(map->mlx_init, map->window);
 	draw(map);
-	return (0);
+	return (1);
 }

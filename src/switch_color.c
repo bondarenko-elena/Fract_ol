@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   switch_color.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/07 19:16:09 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/07 19:16:15 by olbondar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
-int		switch_color(int keycode, t_map *map)
+int	switch_color(int keycode, t_map *map)
 {
 	if (keycode == 69)
 		map->color_red /= 2;
