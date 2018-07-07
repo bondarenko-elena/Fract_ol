@@ -86,19 +86,18 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
-	@echo "\033[32mBuilt library.\033[0m"
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 .c.o:
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
-re: fclean all
+re: @fclean all
 
 .PHONY: all clean fclean re

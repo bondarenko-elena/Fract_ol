@@ -1,33 +1,23 @@
-#include "fractol.h"
-#include <stdio.h>
+#include "../includes/fractol.h"
 
-/*
-** cre, cim - real and imaginary part of the constant c, determines shape of the set
-** zx = scaled x coordinate of pixel (scaled to lie in the Mandelbrot X scale (-2.5, 1)); zx represents the real part of z
-** zy = scaled y coordinate of pixel (scaled to lie in the Mandelbrot Y scale (-1, 1)); zy represents the imaginary part of z 
-*/
-
-void set_mandelbrot(t_map *map)
+void				set_mandelbrot(t_map *map)
 {
 	float			tmp;
 
-	map->zx = 0;
-	map->zy = 0;
-	map->curr_iteration = 0;
-	map->cre = map->x / map->zoom + map->x1;
-	map->cim = map->y / map->zoom + map->y1;
-
-	while (map->zx * map->zx + map->zy * map->zy < 4 && map->curr_iteration < map->max_iteration)
+	map->c_r = map->x / map->zoom + map->x1;
+	map->c_i = map->y / map->zoom + map->y1;
+	map->z_r = 0;
+	map->z_i = 0;
+	map->current_iteration = 0;
+	while (map->z_r * map->z_r + map->z_i * map->z_i < 4 && map->current_iteration < map->max_iteration)
 	{
-		tmp = map->zx;
-		map->zx = map->zx * map->zx - map->zy * map->zy + map->cre;
-		map->zy = 2 * map->zy * tmp + map->cim;
-		map->curr_iteration++;
+		tmp = map->z_r;
+		map->z_r = map->z_r * map->z_r - map->z_i * map->z_i + map->c_r;
+		map->z_i = 2 * map->z_i * tmp + map->c_i;
+		map->current_iteration++;
 	}
-	if (map->curr_iteration == map->max_iteration)
-		//put_pxl_to_image(map, map->x, map->y);
-		puts("do put_pxl_to_image");
+	if (map->current_iteration == map->max_iteration)
+		put_pixel(map, map->x, map->y);
 	else
-		//put_pxl_to_image2(map, map->x, map->y);
-		puts("do put_pxl_to_image");
+		put_pixel_2(map, map->x, map->y);
 }

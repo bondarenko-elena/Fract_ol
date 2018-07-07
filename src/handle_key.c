@@ -1,26 +1,18 @@
-#include "fractol.h"
+#include "../includes/fractol.h"
 
-int	handle_key(t_map *map, int key_code)
+int				handle_key(int keycode, t_map *map)
 {
-	
-	// map->color = 0xFF0000;
-	// esc
-	if (key_code == 53)
+	if (keycode == 53)
 		exit(0);
-	// arrow left
-	if (key_code == 123)
+	if (keycode == 123)
 		map->x1 += 30 / map->zoom;
-	// arrow right
-	if (key_code == 124)
+	if (keycode == 124)
 		map->x1 -= 30 / map->zoom;
-	// arrow up
-	if (key_code == 126)
-		map->y1 += 20 / map->zoom;
-	// arrow down
-	if (key_code == 125)
+	if (keycode == 125)
 		map->y1 -= 30 / map->zoom;
-	// 4 on the numpad and ont the general keydoard
-	if (key_code == 21 || key_code == 86)
+	if (keycode == 126)
+		map->y1 += 20 / map->zoom;
+	if (keycode == 86 || keycode == 21)
 	{
 		map->fractal = 4;
 		map->zoom = 300;
@@ -28,7 +20,7 @@ int	handle_key(t_map *map, int key_code)
 	}
 	mlx_clear_window(map->mlx_init, map->window);
 	draw(map);
-	switch_color(map, key_code);
-	switch_fractal(map, key_code);
+	switch_color(keycode, map);
+	swich_fractal(keycode, map);
 	return (1);
 }

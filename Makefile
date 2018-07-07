@@ -1,18 +1,19 @@
 
 NAME := fractol
 SRC := main.c \
-		mlx.c \
+		set_burningship.c \
+		set_douady.c \
 		set_julia.c \
 		set_mandelbrot.c \
-		display_text.c \
-		init_map.c \
 		draw.c \
 		event.c \
-		mouse_move.c \
-		handle_key.c \
-		switch_color.c \
-		switch_fractal.c \
+		init_map.c \
+		display_text.c \
+		mouse_hook.c \
 		mouse_julia.c \
+		switch_color.c \
+		swich_fractal.c \
+		handle_key.c \
 		put_pixel.c \
 		put_pixel_2.c \
 
@@ -31,15 +32,16 @@ create_lib:
 
 $(NAME): $(OBJ)
 	@gcc -o $(NAME) $(OBJ) libft/libft.a -L $(LIBMLX) $(FRAMEWS)
+	@echo "\033[32mFract'ol is ready.\033[0m"
 
 %.o: %.c
 	@$(CC) -c $(CFLAGS) -o $@ $< -I $(HEADLIB) -I $(HEADMLX) -I includes
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
-	make fclean -C libft
+	@rm -rf $(NAME)
+	@make fclean -C libft
 
-re: fclean all
+re: @fclean all

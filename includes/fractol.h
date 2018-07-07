@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olbondar <olbondar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/20 11:24:29 by thgiraud          #+#    #+#             */
+/*   Updated: 2018/07/07 16:19:18 by olbondar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
@@ -10,59 +21,60 @@
 # define WIDTH 1000
 # define HEIGHT 1000
 
-typedef struct		s_map
+typedef struct			s_map
 {
-	double			zoom;
-	double			xy;
-	void			*window;
-	void			*image;
-	int				fractal;
+	double			c_i;
+	double			c_r;
+	double			h;
+	double			current_iteration;
+	double			img_x;
+	double			img_y;
+	double			juls_x;
+	double			juls_y;
+	double			x1;
+	double			x2;
 	double			x;
+	double			y1;
+	double			y2;
 	double			y;
-	char			*data;
+	double			z_i;
+	double			z_r;
+	double			zoom;
 	unsigned long	color;
-	int				color_red;
-	int				color_green;
-	int				color_blue;
-	int				max_iteration;
-	void			*mlx_init;
+	float			aa;
+	float			bb;
 	//for mlx_get_data_adr
 	char			*get_data_addr;
 	int				bits_per_pixel;
 	int				size_line;
 	int				endian;
-	//
-	double			x1;
-	double			y1;
-	double			x2;
-	double			y2;
-	double			img_x;
-	double			img_y;
-	double			jul_x;
-	double			jul_y;
-	double			curr_iteration;
-	double			cre;
-	double			cim;
-	double			zx;
-	double			zy;
+	int				color_blue;
+	int				color_green;
+	int				color_red;
+	int				fractal;
+	int				max_iteration;
 	int				mouse_switch;
-	
-}					t_map;
+	void			*image;
+	void			*mlx_init;
+	void			*window;
+}						t_map;
 
+int					main(int argc, char **argv);
+void				set_burningship(t_map *map);
+void				set_douady(t_map *map);
 void				set_julia(t_map *map);
 void				set_mandelbrot(t_map *map);
-void				mlx(t_map *map);
-void				display_text(t_map *map);
-void				init_map(t_map *map);
 void				draw(t_map *map);
 void				event(t_map *map);
-int					mouse_move(t_map *map, int keycode, int x, int y);
-int					handle_key(t_map *map, int key_code);
-int					switch_color(t_map *map, int keycode);
-int					switch_fractal(t_map *map, int keycode);
-int					mouse_julia(t_map *map, int x, int y);
-void				put_pixel(t_map *map, int x, int y);
+void				init_map(t_map *map);
+void				display_text(t_map *map);
+int					mouse_hook(int button, int x, int y, t_map *map);
+int					mouse_julia(int x, int y, t_map *map);
+int					switch_color(int keycode, t_map *map);
+int					swich_fractal(int keycode, t_map *map);
+int					handle_key(int keycode, t_map *map);
 void				put_pixel(t_map *map, int x, int y);
 void				put_pixel_2(t_map *map, int x, int y);
+
 
 #endif
