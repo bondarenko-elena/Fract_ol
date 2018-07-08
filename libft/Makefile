@@ -6,12 +6,11 @@
 #    By: olbondar <olbondar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/02 14:28:57 by olbondar          #+#    #+#              #
-#    Updated: 2018/02/18 16:16:50 by olbondar         ###   ########.fr        #
+#    Updated: 2017/12/02 16:34:53 by olbondar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-HEADER_DIR = includes
 CFLAGS = -c -Wall -Wextra -Werror
 SRC = ft_memset.c \
 		ft_bzero.c \
@@ -69,6 +68,7 @@ SRC = ft_memset.c \
 		ft_lstdelone.c \
 		ft_lstdel.c \
 		ft_lstadd.c \
+		ft_lstadd_back.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_islower.c \
@@ -79,7 +79,6 @@ SRC = ft_memset.c \
 		ft_min.c \
 		ft_strlen_ch.c \
 		ft_countwords.c \
-		get_next_line.c \
 		
 OBJ = $(SRC:.c=.o)
 

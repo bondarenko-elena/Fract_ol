@@ -30,8 +30,8 @@ int	main(int argc, char **argv)
 	if (argc == 2 && ((ft_strcmp(argv[1], "1") != 0) || (ft_strcmp(argv[1], "2")
 	!= 0) || (ft_strcmp(argv[1], "3") != 0) || (ft_strcmp(argv[1], "4") != 0)))
 	{
-		ft_putendl("choose fractals between 1 and 4 (1 - julia, 2 - mandelbrot,
-			3 - burningship, 4 - douady rabbit");
+		ft_putendl("choose fractals between 1 and 4");
+		ft_putendl("1 - julia, 2 - mandelbrot, 3 - burningship, 4 - rabbit");
 	}
 	return (0);
 }

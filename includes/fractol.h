@@ -6,7 +6,7 @@
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 16:08:04 by olbondar          #+#    #+#             */
-/*   Updated: 2018/07/08 16:08:08 by olbondar         ###   ########.fr       */
+/*   Updated: 2018/07/08 16:42:21 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # define WIDTH 1000
 # define HEIGHT 1000
 
-#define INIT(x, y) (x = 300, y = 50)
+# define INIT(x, y) (x = 300, y = 50)
 
-typedef struct			s_map
+typedef struct		s_map
 {
 	double			c_i;
 	double			c_r;
@@ -45,7 +45,6 @@ typedef struct			s_map
 	unsigned long	color;
 	float			aa;
 	float			bb;
-	//for mlx_get_data_adr
 	char			*get_data_addr;
 	int				bits_per_pixel;
 	int				size_line;
@@ -59,7 +58,7 @@ typedef struct			s_map
 	void			*image;
 	void			*mlx_init;
 	void			*window;
-}						t_map;
+}					t_map;
 
 int					main(int argc, char **argv);
 void				set_burningship(t_map *map);
@@ -77,6 +76,5 @@ int					switch_fractal(int keycode, t_map *map);
 int					handle_key(int keycode, t_map *map);
 void				put_pixel(t_map *map, int x, int y);
 void				put_pixel_2(t_map *map, int x, int y);
-
 
 #endif
