@@ -16,10 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_map	map;
 
-	if (argc == 2 && ((!ft_strcmp(argv[1], "1")) ||
-				(!ft_strcmp(argv[1], "2")) ||
-				(!ft_strcmp(argv[1], "3")) ||
-				(!ft_strcmp(argv[1], "4"))))
+	if (argc == 2 && ((ft_strcmp(argv[1], "1") == 0) || (ft_strcmp(argv[1], "2")
+	== 0) || (ft_strcmp(argv[1], "3") == 0) || (ft_strcmp(argv[1], "4") == 0)))
 	{
 		map.fractal = ft_atoi(argv[1]);
 		init_map(&map);
@@ -27,7 +25,13 @@ int	main(int argc, char **argv)
 		event(&map);
 		mlx_loop(map.mlx_init);
 	}
-	else
-		ft_putendl("wrong argument");
+	if (argc < 2 || argc > 2)
+		ft_putendl("wrong number of arguments, you should choose just one");
+	if (argc == 2 && ((ft_strcmp(argv[1], "1") != 0) || (ft_strcmp(argv[1], "2")
+	!= 0) || (ft_strcmp(argv[1], "3") != 0) || (ft_strcmp(argv[1], "4") != 0)))
+	{
+		ft_putendl("choose fractals between 1 and 4 (1 - julia, 2 - mandelbrot,
+			3 - burningship, 4 - douady rabbit");
+	}
 	return (0);
 }

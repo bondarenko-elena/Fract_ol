@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olbondar <olbondar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/20 11:24:29 by thgiraud          #+#    #+#             */
-/*   Updated: 2018/07/07 16:19:18 by olbondar         ###   ########.fr       */
+/*   Created: 2018/07/08 16:08:04 by olbondar          #+#    #+#             */
+/*   Updated: 2018/07/08 16:08:08 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define WIDTH 1000
 # define HEIGHT 1000
+
+#define INIT(x, y) (x = 300, y = 50)
 
 typedef struct			s_map
 {

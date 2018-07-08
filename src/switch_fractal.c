@@ -17,20 +17,22 @@ int	switch_fractal(int keycode, t_map *map)
 	if (keycode == 18 || keycode == 83)
 	{
 		map->fractal = 1;
-		map->zoom = 300;
-		map->max_iteration = 50;
+		INIT(map->zoom, map->max_iteration);
 	}
 	if (keycode == 19 || keycode == 84)
 	{
 		map->fractal = 2;
-		map->zoom = 300;
-		map->max_iteration = 50;
+		INIT(map->zoom, map->max_iteration);
 	}
 	if (keycode == 20 || keycode == 85)
 	{
 		map->fractal = 3;
-		map->zoom = 300;
-		map->max_iteration = 50;
+		INIT(map->zoom, map->max_iteration);
+	}
+	if (keycode == 86 || keycode == 21)
+	{
+		map->fractal = 4;
+		INIT(map->zoom, map->max_iteration);
 	}
 	mlx_clear_window(map->mlx_init, map->window);
 	draw(map);
