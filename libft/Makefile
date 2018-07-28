@@ -79,6 +79,7 @@ SRC = ft_memset.c \
 		ft_min.c \
 		ft_strlen_ch.c \
 		ft_countwords.c \
+		get_next_line.c \
 		
 OBJ = $(SRC:.c=.o)
 
@@ -87,6 +88,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
+	@echo "\033[32mLibft is built.\033[0m"
 
 .c.o:
 	@$(CC) $(CFLAGS) -c -o $@ $<
