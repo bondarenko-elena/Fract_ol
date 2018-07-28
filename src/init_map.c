@@ -24,7 +24,7 @@ void	init_map(t_map *map)
 	map->color_green = 170;
 	map->color_blue = 255;
 	map->mouse_switch = 1;
-	map->image = mlx_new_image(map->mlx_init, 1000, 1000);
+	map->image = mlx_new_image(map->mlx_init, WIDTH, HEIGHT);
 	map->get_data_addr = mlx_get_data_addr(map->image,
 			&(map->bits_per_pixel), &(map->size_line), &(map->endian));
 	map->x1 = -2.05;

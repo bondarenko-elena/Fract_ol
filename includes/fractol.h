@@ -16,7 +16,6 @@
 # include <mlx.h>
 # include <math.h>
 # include "../libft/libft.h"
-# include <stdio.h>
 
 # define WIDTH 1000
 # define HEIGHT 1000
