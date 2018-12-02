@@ -6,8 +6,8 @@ exit                     ---> ESC </br>
 move up/down/left/right  ---> arrows </br>
 fix image                ---> Numpad . (dot) </br>
 change frastal           ---> Numpad 1-4 </br>
-increase iterations      ---> i
-change colors            ---> Numpad =/*/+/-
+increase iterations      ---> i </br>
+change colors            ---> Numpad =/*/+/- </br>
 
 ![alt tag](https://github.com/bondarenko-elena/8_Fract_ol/blob/master/Screen%20Shot%202018-12-02%20at%205.52.37%20PM.png)
 ![alt tag](https://github.com/bondarenko-elena/8_Fract_ol/blob/master/Screen%20Shot%202018-12-02%20at%205.52.54%20PM.png)
