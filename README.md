@@ -1,5 +1,5 @@
 # 8_Fract_ol
-Discover the 2D programming and the psychedelic world of fractals thanks to this project to realize with the minilibX library.
+This project’s goal is to create a small fractal exploration program, discovering the 2D programming and the psychedelic world of fractals with the minilibX library.
 
 Hooks for MacOS: </br>
 exit                     ---> ESC </br>
